@@ -1,6 +1,6 @@
 // A recursive binary search function. It returns location of x in given array arr[l..r] is present, otherwise -1
 
-export function binarySearchRecursive(arr, start, arrLength, x) {
+function binarySearchRecursive(arr, start, arrLength, x) {
     
     if (arrLength >= 1) {
         let mid = start + Math.floor((arrLength - start) / 2)
@@ -12,11 +12,11 @@ export function binarySearchRecursive(arr, start, arrLength, x) {
         
         // If element is smaller than mid, then it can only be present in left subarray        
         if (arr[mid] > x) {
-            return binarySearch(arr, start, mid-1, x)
+            return binarySearchRecursive(arr, start, mid-1, x)
         }
 
         // Else the element can only be present in right subarray
-        return binarySearch(arr, mid + 1, arrLength, x);
+        return binarySearchRecursive(arr, mid + 1, arrLength, x);
     }
 
     // We reach here when element is not present in array

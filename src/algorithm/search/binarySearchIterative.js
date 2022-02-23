@@ -1,5 +1,5 @@
 // when array is sorted lower to bigger
-export function binarySearchRecursive(arr, x) {
+function binarySearchRecursive(arr, x) {
     let start = 0
     let end = arr.length -1
     let mid
