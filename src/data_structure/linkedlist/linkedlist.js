@@ -109,10 +109,56 @@ class LinkedList {
 
     // insert value to index
     insert(index, value) {
+        if (index === 0) return this.unshift(value)
+        if (index === this.length) return this.push(value)
+        if (index < 0 || index > this.length) return false
+ 
+        const newNode = new Node(value)
+        const temp = this.get(index-1)
 
+        newNode.next = temp.next
+        temp.next = newNode
+        this.length++
+
+        return true
+    }
+
+    // remove the index node
+    remove(index) {
+        if (index === 0) return this.shift()
+        if (index === this.length - 1) return this.pop()
+        if (index < 0 || index > this.length) return undefined
+
+        const before = this.get(index-1)
+        const temp = before.next
+
+        before.next = temp.next
+        temp.next = null
+
+        this.length--
+
+        return temp
+    }
+
+    // reverse the linked list
+    reverse() { // O(n) we change the head and tail, and change every node's pointer direction to opposite 
+        let temp = this.head 
+        this.head = this.tail
+        this.tail = temp
+
+        let next = temp.next
+        let prev = null
+
+        for (let i = 0; i < this.length; i++) {
+            next = temp.next // initially, next is already temp.next at the beginning. (copy temp.next value)
+            temp.next = prev // change temp pointer to prev
+            prev = temp // move prev to temp
+            temp = next //move temp to copied original temp.next value.
+        }
+        
+        return this
     }
 }
 
 let myLinkedList = new LinkedList(7)
 myLinkedList.push(4)
- 
