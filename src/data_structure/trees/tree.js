@@ -39,8 +39,31 @@ class BinarySearchTree {
                 }
                 temp = temp.right
             }
-
-
         }
+    }
+
+    contains(value) {
+        if (this.root === null) return false
+
+        let temp = this.root
+
+        while (temp) {
+            if (value < temp.value) {
+                temp = temp.left
+            }
+            else if (value > temp.value) {
+                temp = temp.right
+            }
+            else return true
+        }
+
+        return false
+    }
+
+    minValueNode(currentNode) {
+        while (currentNode.left != null) {
+            currentNode = currentNode.left
+        }
+        return currentNode
     }
 }
