@@ -1,23 +1,17 @@
-function swap(arr, xp, yp) {
-    var temp = arr[xp]
-    arr[xp] = arr[yp]
-    arr[yp] = temp
-}
-
-function selectionSort(arr, n) {
-    var i, j, min_idx
-
-    // one by one move boundary of unsorted subarray
-    for (i=0; i< n-1; i++) {
-        //find the minimum element in unsorted array
-        min_idx = i
-        for (j = i + 1; j< n; j++) {
-            if (arr[j] < arr[min_idx]) {
-                min_idx = j
-            }            
+function selectionSort(array) {
+    let min
+    for (let i = 0; i < array.length - 1; i++) {
+        min = i
+        for (let j = i+1; j < array.length; j++) {
+            if (array[j] < array[min]) {
+                min = j
+            }                        
         }
-
-        // Swap the found minimum element with the first element
-        swap(arr, min_idx, i)
+        if (i !== min) {
+            let temp = array[i]
+            array[i] = array[min]
+            array[min] = temp
+        }          
     }
+    return array
 }
