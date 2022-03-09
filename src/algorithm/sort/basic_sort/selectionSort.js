@@ -1,3 +1,7 @@
+// average time O(n^2)
+// worst time O(n^2) 
+// space complexity O(1)
+
 function selectionSort(array) {
     let min
     for (let i = 0; i < array.length - 1; i++) {
