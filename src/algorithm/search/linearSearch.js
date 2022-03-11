@@ -5,8 +5,7 @@ function linearSearch(arr, searchNum) {
     let position = -1
 
     // Run loop from 0 to right
-    for (left=0; left<=right;) {
-                
+    for (left=0; left<=right;) {                
         if (arr[left] == searchNum) {
             position = left;
             break;
@@ -20,9 +19,7 @@ function linearSearch(arr, searchNum) {
     }
 
     //if not found
-    if (position == -1) {
-        return console.log('number not found')
-    }
+    if (position == -1) return console.log('number not found')
 }
 
 

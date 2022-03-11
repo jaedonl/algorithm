@@ -9,16 +9,11 @@ function binarySearchRecursive(arr, x) {
         mid = start + Math.floor((end - start) / 2)
 
         // if x is present in mid itself
-        if (arr[mid] == x) {
-            return mid
-        } 
+        if (arr[mid] == x) return mid
 
         // If element is smaller than mid, then it can only be present in left subarray
-        if (arr[mid] > x) {
-            end = mid - start
-        } 
-        else start = mid + 1
-        
+        if (arr[mid] > x) end = mid - start                     
+        else start = mid + 1        
     }
     // element not present in array
     return -1
