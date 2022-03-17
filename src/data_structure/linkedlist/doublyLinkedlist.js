@@ -14,7 +14,7 @@ class DoublyLinkedList {
         this.length = 1
     }
 
-    push(value) {
+    push(value) { // o(1)
         const newNode = new Node(value)
         if (!this.head) {
             this.head = newNode
@@ -29,7 +29,7 @@ class DoublyLinkedList {
         return this
     }
 
-    pop() {
+    pop() { // o(1)
         if (this.length === 0) return undefined
         
         let temp = this.tail // copy tail value to temp
@@ -47,7 +47,7 @@ class DoublyLinkedList {
         return temp // return popped node
     }
 
-    unshift(value) {
+    unshift(value) { // o(1)
         const newNode = new Node(value)
     
         if (this.length === 0) {
@@ -63,7 +63,7 @@ class DoublyLinkedList {
         return this
     }
 
-    shift() {
+    shift() { // o(1)
         if (this.length === 0) return undefined
         
         let temp = this.head
@@ -80,7 +80,7 @@ class DoublyLinkedList {
         return temp
     }
 
-    get(index) {
+    get(index) { // o(n)
         if (index < 0 || index >= this.length) return undefined
 
         let temp = this.head
@@ -99,7 +99,7 @@ class DoublyLinkedList {
         return temp
     }
 
-    set(index, value) {
+    set(index, value) { // o(n)
         let temp = this.get(index)
 
         if (temp) {
@@ -109,7 +109,7 @@ class DoublyLinkedList {
         return false
     }
 
-    insert(index, value) {
+    insert(index, value) { // o(n)
         if (index === 0) return this.unshift(value)
         if (index === this.length) return this.push(value)
         if (index < 0 || index > this.length) return false
@@ -128,7 +128,7 @@ class DoublyLinkedList {
         return true
     }
 
-    remove(index) {
+    remove(index) { // o(n)
         if (index === 0) return this.shift()
         if (index === this.length - 1) return this.pop()
         if (index < 0 || index > this.length) return undefined
