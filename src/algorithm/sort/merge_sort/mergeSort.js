@@ -22,6 +22,7 @@ function merge(arr1, arr2) {
         combined.push(arr2[j])
         j++
     }
+    return combined
 }
 
 // recursive
