@@ -150,12 +150,12 @@ class LinkedList {
         let prev = null
 
         for (let i = 0; i < this.length; i++) {
-            next = temp.next // initially, next is already temp.next at the beginning. (copy temp.next value)
-            temp.next = prev // change temp pointer to prev
-            prev = temp // move prev to temp
-            temp = next //move temp to copied original temp.next value.
+            next = temp.next 
+            temp.next = prev 
+            prev = temp 
+            temp = next 
         }
-        
+                
         return this
     }
 }
