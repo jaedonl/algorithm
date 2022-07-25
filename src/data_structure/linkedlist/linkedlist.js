@@ -162,3 +162,78 @@ class LinkedList {
 
 let myLinkedList = new LinkedList(7)
 myLinkedList.push(4)
+
+
+// var pushNode = function(list, val) {
+//     const newNode = new Node(val)
+//     if (!list.head) {
+//         list.head = newNode
+//         list.tail = newNode
+//     } else {
+//         list.tail.next = newNode
+//         list.tail = newNode
+//     }
+//     return list
+// }
+
+// var popNode = function(list) {
+//     let current = list.head
+//     let prev
+//     while (current.next) {
+//         prev = current
+//         current = current.next
+//     }
+//     list.tail = prev
+//     list.tail.next = null
+
+//     return current
+// }
+
+// var getNode = function(list, val) {
+//     if (list.head.val === val) return list.head
+//     if (list.tail.val === val) return list.tail
+//     let current = list.head
+
+//     while (current.val !== val) {
+//         current = current.next
+//     }
+//     return current
+// }
+
+// var insertNode = function(list, idx, val) {
+//     const newNode = new Node(val)
+//     let current = list.head
+//     let prev = null
+
+//     for (let i = 0; i < idx; i++) {        
+//         prev = current
+//         current = current.next        
+//     }
+    
+//     prev.next = newNode
+//     newNode.next = current
+    
+//     return newNode
+// }
+
+// var removeNode = function(list, val) {
+//     let current = getNode(list, val)
+//     current.val = current.next.val
+//     current = current.next
+//     return current
+// }
+
+// var reverseList = function(head) {    
+//     let prev = null
+//     let next = null
+//     let current = head    
+    
+//     while (current != null) {
+//         next = current.next; 
+//         current.next = prev;  
+//         prev = current; 
+//         current = next;
+//     }
+//     return prev
+// };
+
